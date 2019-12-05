@@ -1,11 +1,14 @@
-document.querySelector('.add-todo').addEventListener('click', addToDo(function(){
-    const entry ={
-        text: document.querySelector('.todo-input').value,
-        id: todos.length,
-        complete: false,
-        priority: document.querySelector('.priority').value,
-    }
-    addToo(entry)
-    printTodo(entry)
-}))
+document.querySelector('.add-todo').addEventListener('click', ()=>{
+    const entry = {
+            text: document.querySelector('.todo-input').value,
+            id: todos.length,
+            complete: false,
+            priority: Number(document.querySelector('.priority').value),
+        }
+        addTodo(entry)
+        refreshTodos()
+        document.querySelector('.todo-input').value=''
+}
+    
+)
 
